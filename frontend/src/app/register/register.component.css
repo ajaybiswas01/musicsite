@@ -1,0 +1,47 @@
+.signupBox{align-items:center;color:rgba(17,32,46,.65);display:flex;min-height:100vh;min-width:100vw;position:relative}
+.signupBox,.signupBox:after{height:100%;width:100%}
+.signupBox:after{background:#11202e;bottom:0;content:"";left:0;opacity:.9;position:absolute;right:0;top:0}
+.signupBox section{background:#e6e8e9;border-radius:4px;margin:30px auto 5px;max-width:530px;min-width:490px;padding:50px 35px 40px;position:relative;z-index:2}
+.signupBox section:before{box-shadow:0 3px 6px 0 rgba(0,0,0,.05);background:no-repeat 50%/37.5px #fff url(../../assets/images/CM_Gradient_Logo.svg);border-radius:50%;content:"";height:50px;left:50%;position:absolute;top:0;transform:translate(-50%,-50%);width:50px}
+.signupBox .loader-overlay{align-items:center;background:#000;bottom:0;display:flex;height:100%;justify-content:center;left:0;opacity:.5;position:absolute;right:0;top:0;width:100%;z-index:3}
+.signupBox h1{font-size:22px;margin:0 0 25px;padding-bottom:20px;position:relative;text-align:center}
+.signupBox h1:after{background:linear-gradient(99deg,#01da79,#0b9de3);bottom:0;content:"";height:2px;left:50%;max-width:100%;position:absolute;transform:translateX(-50%);width:100px}
+.signupBox label{color:rgba(17,32,46,.65);font-size:12px;font-weight:400;margin:1px 0}
+.signupBox input,.signupBox label{padding-left:12px;width:100%}
+.signupBox input{border:1px solid #cbcbcb;border-radius:4px;font-size:16px;margin:0;transition:none}
+.signupBox input:focus{border-color:#476c8e;box-shadow:inset 0 0 0 .5px #476c8e}
+.signupBox .has-error .form-control{background-color:rgba(204,95,88,.15);border:1px solid #cc5f58}
+.signupBox .has-error .form-control:focus{box-shadow:inset 0 0 0 .5px #cc5f58!important}
+.signupBox .help-block{color:#cc5f58;font-size:12px;font-weight:500;margin:0}
+.signupBox .form-group{margin-bottom:0}
+.signupBox .btn-blue{background-color:#476c8e;color:#e6e8e9;font-size:14px;font-weight:500}
+.signupBox .btn-blue:disabled{background-color:#9c9ea0}
+.signupBox .btn-frames{background-color:tracnsparent;border:1px solid rgba(17,32,46,.37);color:#11202e;font-size:14px;font-weight:500}
+.signupBox .btn-frames:disabled{background-color:#9c9ea0}
+.signupBox .bottom-text{color:rgba(17,32,46,.75);display:block;font-size:12px;font-weight:500;margin-top:35px;text-align:center;width:100%}
+.signupBox .bottom-text a{color:inherit;text-decoration:underline}
+.signupBox .bottom-text a:focus,.signupBox .bottom-text a:hover{color:inherit}
+@media (max-width:580px){
+.signupBox section{min-width:0}
+}
+.signupBox{background:50%/cover no-repeat url(../../assets/images/signup-bg.jpg)}
+.signupBox form[name=signupForm]{-webkit-column-gap:15px;-moz-column-gap:15px;column-gap:15px;display:grid;grid-template-areas:"firstname lastname" "email email" "password password" "company role" "captcha captcha" "subscribe subscribe" "submit submit";row-gap:5px}
+.signupBox form[name=signupForm] .form-group[grid-area=firstname]{grid-area:firstname}
+.signupBox form[name=signupForm] .form-group[grid-area=lastname]{grid-area:lastname}
+.signupBox form[name=signupForm] .form-group[grid-area=email]{grid-area:email}
+.signupBox form[name=signupForm] .form-group[grid-area=password]{grid-area:password}
+.signupBox form[name=signupForm] .form-group[grid-area=company]{grid-area:company}
+.signupBox form[name=signupForm] .form-group[grid-area=role]{grid-area:role}
+.signupBox form[name=signupForm] .form-group[grid-area=captcha]{grid-area:captcha}
+.signupBox form[name=signupForm] .form-group[grid-area=subscribe]{grid-area:subscribe}
+.signupBox form[name=signupForm] .form-group[grid-area=submit]{grid-area:submit}
+.signupBox .checkbox{align-items:center;display:flex;margin-bottom:20px;position:relative}
+.signupBox input[type=checkbox]{cursor:pointer;margin:0 10px 0 0;opacity:0;position:relative;width:auto}
+.signupBox input[type=checkbox]+label{font-size:14px;width:auto}
+.signupBox input[type=checkbox]+label:before{background:#fff;border:1px solid #cbcbcb;border-radius:3px;content:"";height:23px;left:0;position:absolute;top:50%;transform:translateY(-50%);width:23px}
+.signupBox input[type=checkbox]:focus+label:before{border-color:rgba(17,32,46,.65)}
+.signupBox input[type=checkbox]:checked+label:after{align-items:center;color:rgba(17,32,46,.65);content:"✓";display:flex;font-size:16px;font-weight:700;height:23px;justify-content:center;left:0;position:absolute;top:50%;transform:translateY(-50%);width:23px}
+
+@media (max-width:800px){
+.signupBox form[name=signupForm]{grid-template-areas:"firstname firstname" "lastname lastname" "email email" "password password" "company company" "role role" "captcha captcha" "subscribe subscribe" "submit submit"}
+}

@@ -1,0 +1,109 @@
+
+
+
+
+  <div class="signupBox">
+    <section>
+        <h1>Create Chartmetric Account</h1>
+
+        <div class="text-center mar-ver">
+            <p class="help-block ng-binding"></p>
+        </div>
+
+        <form [formGroup]="UserForm" (ngSubmit)="onFormSubmit()">  
+            <div class="form-group" grid-area="firstname">
+                <label class="control-label" for="firstname">First Name</label>
+                <input id="firstname" name="firstname" class="form-control" type="text" required="" autofocus=""
+                    placeholder="Timothy" formControlName="FirstName" [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }">
+                    <div *ngIf="submitted && f.FirstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.FirstName.errors.required">First Name is required</div>
+                    </div>
+            </div>
+
+            <div class="form-group" grid-area="lastname">
+                <label class="control-label" for="lastname">Last Name</label>
+                <input id="lastname" name="lastname" class="form-control" type="text" required="" placeholder="Smith" formControlName="LastName" [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }">
+                <div *ngIf="submitted && f.LastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.LastName.errors.required">Last Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group" grid-area="email">
+                <label class="control-label" for="email">Work Email</label>
+                <input id="email" name="email" class="form-control" type="email" required=""
+                    placeholder="timothy.smith@company.com"  formControlName="WorkEmail" [ngClass]="{ 'is-invalid': submitted && f.WorkEmail.errors }">
+                    <div *ngIf="submitted && f.WorkEmail.errors" class="invalid-feedback">
+                        <div *ngIf="f.WorkEmail.errors.required">Username is required</div>
+                    </div>
+            </div>
+
+            <div class="form-group" grid-area="password">
+                <label class="control-label" for="password">Password</label>
+                <input id="password" name="password" class="form-control" type="password" autocomplete="new-password"
+                    required="" minlength="6" formControlName="Password" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }">
+                    <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                        <div *ngIf="f.Password.errors.required">Password is required</div>
+                        <div *ngIf="f.Password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+            </div>
+
+            <div class="form-group" grid-area="company">
+                <label class="control-label" for="company">Company / Organization</label>
+                <input name="company" id="company" class="form-control" type="text" placeholder="" formControlName="Company" [ngClass]="{ 'is-invalid': submitted && f.Company.errors }">
+                <div *ngIf="submitted && f.Company.errors" class="invalid-feedback">
+                    <div *ngIf="f.Company.errors.required">Company is required</div>
+                </div>
+            </div>
+
+            <div class="form-group" grid-area="role">
+                <label class="control-label" for="role">Your Role</label>
+                <input id="role" name="role" class="form-control" type="text" placeholder="" formControlName="Role" [ngClass]="{ 'is-invalid': submitted && f.Role.errors }">
+                <div *ngIf="submitted && f.Role.errors" class="invalid-feedback">
+                    <div *ngIf="f.Role.errors.required">Role is required</div>
+                </div>
+            </div>
+
+            <div class="form-group checkbox" grid-area="captcha">
+                <input id="verification" name="verification"
+                    class="form-control" type="checkbox" formControlName="Verification">
+                    <label class="control-label" for="verification">
+                        Verification to occasional Chartmetric emails and updates
+                    </label>
+                
+                <!-- <div id="captcha" name="captcha" vc-recaptcha="" class="ng-pristine">
+                    <div style="width: 304px; height: 78px;">
+                        <div><iframe
+                                src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld8O1wUAAAAAF2o1Ou044MfY91Oxy8Gzs1dcUH7&amp;co=aHR0cHM6Ly9hcHAuY2hhcnRtZXRyaWMuY29tOjQ0Mw..&amp;hl=en&amp;v=HYx6hBAtwYatsD8qzq7tXNTk&amp;size=normal&amp;cb=ff5xx7lvn09u"
+                                role="presentation" name="a-8atpcx6dqx68" scrolling="no"
+                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                                width="304" height="78" frameborder="0"></iframe></div><textarea
+                            id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
+                            style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                    </div><iframe style="display: none;"></iframe>
+                </div> -->
+            </div>
+
+            <div class="form-group checkbox" grid-area="subscribe">
+                <input id="subscribe" name="subscribe"
+                    class="form-control" type="checkbox" formControlName="Subscription">
+                <label class="control-label" for="subscribe">
+                    Subscribe to occasional Chartmetric emails and updates
+                </label>
+            </div>
+
+            <div class="form-group" grid-area="submit">
+                <button class="btn btn-blue btn-block btn-lg" type="submit">
+                    Create Account
+                </button>
+                <p style="margin-top: 20px; text-align: center">
+                    By clicking "Create Account" you agree to the
+                    <a href="#" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                    and
+                    <a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                </p>
+            </div>
+        </form>
+
+        <small class="bottom-text">Already have a Chartmetric Account? <a [routerLink]="[ '/login' ]">Sign in</a></small>
+    </section>
+</div>

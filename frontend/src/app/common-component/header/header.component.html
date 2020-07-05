@@ -1,0 +1,192 @@
+<div ui-view="nav">
+    <nav class="navbar navbar-default ">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li>
+                <a class="navbar-logo" [routerLink]="[ '/dashboard' ]"><img src="assets/images/logo.png"></a>
+                </li>
+            </ul>
+
+            <div class="navbarSearchBar">
+                <form>
+                    <div class="searchInputContainer">
+                        <span class="search-prefix-icon">
+                            <div class="spinner-container">
+                                <i class="fa fa-search fa-fw"></i>
+                            </div>
+                            <div id="search-filters-container" for="search-filters">
+                                All
+                                <select name="search-filters">
+                                    <option value="all">All</option>
+                                    <option value="artists">Artists</option>
+                                    <option value="tracks">Tracks</option>
+                                    <option value="playlists">Playlists</option>
+                                    <option value="curators">Curators</option>
+                                    <option value="albums">Albums</option>
+                                    <option value="stations">Stations</option>
+                                    <option value="cities">Cities</option>
+
+                                </select>
+                                <i class="fa fa-caret-down"></i>
+                            </div>
+                        </span>
+                        <input autofocus="" id="navbar-search" type="search" class="form-control"
+                            data-search-in-playlist="false" autocomplete="off">
+                        <span class="searchVisibilityToggle">×</span>
+                    </div>
+                </form>
+                <div class="search-results">
+                    <div id="suggestions-container">
+                        <div class="autocomplete-suggestions"
+                            style="position: absolute; max-height: 400px; z-index: 9999; width: 604.297px;">
+                            <div class="autocomplete-group">Artists (5)</div>
+                            <div class="autocomplete-suggestion" data-index="0"><img class="img"
+                                    src="assets/images/music-img1.jpg"> <span class="search-suggestion-name">Mike
+                                    Knox</span> <span class="by">(999 Spotify Monthly
+                                    Listeners)</span></div>
+                            <div class="autocomplete-suggestion" data-index="1"><img class="img" data-src="null"
+                                    src="assets/images/music-img4.jpg"> <span class="search-suggestion-name">J.
+                                    Sherman</span> </div>
+                            <div class="autocomplete-suggestion" data-index="2"><img class="img"
+                                    src="assets/images/music-img2.jpg"> <span class="search-suggestion-name">Pop
+                                    Smoke</span> <span class="by">(10.2M Spotify Monthly
+                                    Listeners)</span></div>
+                            <div class="autocomplete-suggestion" data-index="3"><img class="img"
+                                    src="assets/images/music-img3.jpg"> <span class="search-suggestion-name">50
+                                    Cent</span> <span class="by">(15.9M Spotify Monthly
+                                    Listeners)</span></div>
+                            <div class="autocomplete-suggestion" data-index="4"><img class="img" data-src="null"
+                                    src="assets/images/music-img4.jpg"> <span
+                                    class="search-suggestion-name">Sherman</span> </div>
+                            <div class="autocomplete-group">Tracks (2)</div>
+                            <div class="autocomplete-suggestion" data-index="5"><img class="img"
+                                    src="assets/images/music-img5.jpg">
+                                <span class="search-suggestion-name">Harry Potter (Trap Remix)</span> <span
+                                    class="by"> The Trap
+                                    Remix Guys</span></div>
+                            <div class="autocomplete-suggestion" data-index="6"><img class="img"
+                                    src="assets/images/music-img6.jpg"> <span class="search-suggestion-name">Banana
+                                    (feat. Shaggy)</span> <span class="by">
+                                    Conkarah,Shaggy</span></div>
+                            <div class="autocomplete-group">Albums (1)</div>
+                            <div class="autocomplete-suggestion" data-index="7"><img class="img"
+                                    src="assets/images/music-img7.jpg"> <span class="search-suggestion-name">Harry
+                                    Potter (Trap Remix)</span> <span class="by"> TR Guys</span>
+                            </div>
+                            <div class="autocomplete-group">Spotify Playlists (1)</div>
+                            <div class="autocomplete-suggestion" data-index="8"><img class="img"
+                                    src="assets/images/music-img8.jpg">
+                                <span class="search-suggestion-name">Hits</span> <span class="by">Latoria
+                                    Outlaw</span></div>
+                            <div class="autocomplete-group">Cities (1)</div>
+                            <div class="autocomplete-suggestion" data-index="9"><img class="img"
+                                    src="assets/images/music-img9.jpg"> <span
+                                    class="search-suggestion-name">Philadelphia</span> <span
+                                    class="by">Pennsylvania, United
+                                    States</span></div>
+                        </div>
+                    </div>
+
+                    <div class="add-data-footer">
+                        Can't find what you're looking for?
+                        <button class="link-btn">
+                            ADD DATA
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-right-side">
+                <i id="search-button" class="fa fa-search searchOpener"></i>
+                <div class="dropdown">
+                    <button class="navbar-dropdown-toggle dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-circle"></span>
+                        <span class="fa fa-circle"></span>
+                        <span class="fa fa-circle"></span>
+                    </button>
+
+                    <ul class="nav-dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                        <li class="show-collapsed">
+                            <a href="#">
+                                Charts
+                            </a>
+                        </li>
+                        <li class="show-collapsed ">
+                            <a href="#">
+                                Artists
+                            </a>
+                        </li>
+                        <li class="show-collapsed ">
+                            <a href="#">
+                                Albums
+                            </a>
+                        </li>
+                        <li class="show-collapsed ">
+                            <a href="#">
+                                Playlists
+                            </a>
+                        </li>
+                        <li class="show-collapsed ">
+                            <a href="#">
+                                Curators
+                            </a>
+                        </li>
+                        <li class="show-collapsed ">
+                            <a href="#">
+                                Cities
+                            </a>
+                        </li>
+                        <li class="show-collapsed ">
+                            <a href="#">
+                                Radio
+                            </a>
+                        </li>
+                        <li class="show-collapsed ">
+                            <a href="#">
+                                A&amp;R
+                            </a>
+                        </li>
+                        <li class="show-collapsed ">
+                            <a href="#">
+                                Report
+                            </a>
+                        </li>
+
+                        <hr class="dropdown-divider show-collapsed">
+
+                        <!-- ngIf: !nc.user.isPaying -->
+                        <li class="right-button">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <span>Help</span>
+                            </a>
+                        </li>
+                        <li class="right-button">
+                            <a>
+                                <span>Add Data</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Advanced Search</span>
+                            </a>
+                        </li>
+                        <li class="right-button">
+                            <a href="#">
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+
+                        <hr class="dropdown-divider">
+
+                        <li class="right-button">
+                            <a [routerLink]="[ '/login' ]">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="searchCurtain"></div>
+</div>

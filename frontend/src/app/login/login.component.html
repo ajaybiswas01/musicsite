@@ -1,0 +1,39 @@
+<div class="loginBox">
+    <section>
+        <h1>Welcome Back</h1>
+        <div class="text-center mar-ver ng-hide">
+            <p class="help-block ng-binding"></p>
+        </div>
+        <form name="form" (ngSubmit)="login()" #f="ngForm">
+            <div class="form-group" grid-area="email">
+                <label class="control-label" for="email">Email</label>
+                <input id="email" name="email" placeholder="timothy.smith@company.com" type="email" class="form-control"
+                    required="" autofocus="" [(ngModel)]="model.WorkEmail">
+            </div>
+            <div class="form-group" grid-area="password">
+                <label class="control-label" for="password">Password</label>
+                <input id="password" name="password" placeholder="Password" type="password" class="form-control"
+                    required="" [(ngModel)]="model.Password">
+            </div>
+            <div>
+                <p style="color:#E92626;font-size:20px;font-weight:normal" Class="success">
+                    {{errorMessage}}
+                </p>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="form-group btnsSec flex-fill" grid-area="signup">
+                    <a class="btn btn-frames btn-block btn-lg" [routerLink]="[ '/register' ]">Sign Up</a>
+                </div>
+                <div class="form-group btnsSec flex-fill" grid-area="signin">
+                    <button type="submit" class="btn btn-blue btn-block btn-lg">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <small class="bottom-text">
+            <a [routerLink]="[ '/forgotpassword' ]">Forgot password?</a>
+        </small>
+    </section>
+</div>

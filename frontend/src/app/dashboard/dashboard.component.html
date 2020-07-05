@@ -1,0 +1,1756 @@
+<div>
+    <!-- uiView: nav -->
+    <app-header></app-header>
+    <!-- uiView: body -->
+    <div ui-view="body">
+
+        <div class="container-fluid mar-top ">
+            <h1 class="text-xl">Dashboard</h1>
+            <div class="row mar-ver">
+                <div id="dashboard-nav" class="col-xs-12 flex-space-between" style="align-items: center">
+                    <select class="select-dropdown visible-xs">
+                        <option value="artists">
+                            Artists
+                        </option>
+                        <option value="tracks">
+                            Tracks
+                        </option>
+                        <option value="albums">
+                            Albums
+                        </option>
+                        <option value="playlists">
+                            Playlists
+                        </option>
+                        <option value="curators">
+                            Curators
+                        </option>
+                    </select>
+
+                    <div class="tab-group hidden-xs">
+                        <button class="btn tab-btn active" id="1">
+                            Artists
+                        </button>
+                        <button class="btn tab-btn" id="2">
+                            Tracks
+                        </button>
+                        <button class="btn tab-btn" id="3">
+                            Albums
+                        </button>
+                        <button class="btn tab-btn" id="4">
+                            Playlists
+                        </button>
+                        <button class="btn tab-btn" id="5">
+                            Curators
+                        </button>
+                    </div>
+                    <div style="display: flex">
+                        <button class="btn btn-rounded label-btn" data-toggle="modal" data-target="#myModal">
+                            Personalize
+                        </button>
+                        <button class="btn-rounded label-btn">
+                            Getting Started
+                        </button>
+                        <button class="btn-rounded label-btn">
+                            Interactive Tutorial
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                         <div class="modal-header" style="padding-top: -5px">
+                            <button type="button" class="close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h1 class="text-lg mar-no" style="display: inline-block">
+                                Customize Dashboard
+                            </h1>
+                            &nbsp;
+                            <label style="cursor: pointer; font-weight: normal; display: inline-block">
+                                <input type="checkbox">
+                                Select all
+                            </label>
+                        </div>
+
+                        <div class="modal-body" style="columns: 3">
+                            <div>
+                                <label style="cursor: pointer; font-weight: normal; width: 100%">
+                                    <input type="checkbox">
+                                    Platform
+                                </label>
+                            </div>
+                            <div>
+                                <label style="cursor: pointer; font-weight: normal; width: 100%">
+                                    <input type="checkbox">
+                                    Followers
+                                </label>
+                            </div>
+                            <div>
+                                <label style="cursor: pointer; font-weight: normal; width: 100%">
+                                    <input type="checkbox">
+                                    Playlist Total Reach
+                                </label>
+                            </div>
+                            <div>
+                                <label style="cursor: pointer; font-weight: normal; width: 100%">
+                                    <input type="checkbox">
+                                    Most Popular Playlist Followers
+                                </label>
+                            </div>
+                            <div>
+                                <label style="cursor: pointer; font-weight: normal; width: 100%">
+                                    <input type="checkbox">
+                                    Playlists
+                                </label>
+                            </div>
+                            <div>
+                                <label style="cursor: pointer; font-weight: normal; width: 100%">
+                                    <input type="checkbox">
+                                    Trend
+                                </label>
+                            </div>
+                            <div>
+                                <label style="cursor: pointer; font-weight: normal; width: 100%">
+                                    <input type="checkbox">
+                                    Added On
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="main-list col-sm-12 ">
+                        <div class="dtls">
+                            <div data-id="1" class="dataDtls active">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title" style="overflow: visible">
+                                            <div>
+                                                <div class="flex-space-between">
+                                                    <div>
+                                                        Favorite Artists
+                                                        <span class="badge badge-default ">3</span>
+                                                    </div>
+                                                    <div class="panel-control pad-no">
+                                                        <div>
+                                                            <button title="Download the table data in CSV format"
+                                                                class="btn btn-rounded btn-purple"
+                                                                type="button">Export CSV
+                                                            </button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h3>
+
+                                    </div>
+                                    <div class="panel-body">
+                                        <div>
+                                            <div>
+
+                                                <div class="pad-btm ">
+                                                    <div class="form-group">
+                                                        <input type="text"
+                                                            placeholder="Search among artists you follow"
+                                                            class="form-control ">
+                                                    </div>
+                                                </div>
+                                                <div class="sticky-header-wrapper">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="sticky-left  tablesort-sortable">
+                                                                    Name <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center  tablesort-sortable">
+                                                                    Country <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    CPP Rank
+                                                                    <div class="whatsThis" use-icon="true"
+                                                                        append-to-body="true">
+                                                                        <small>
+                                                                            <span class=" fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    &nbsp;
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Popularity <div
+                                                                        class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Followers <div
+                                                                        class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Monthly Listeners
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Conversion Ratio
+                                                                    <div class="whatsThis" placement="bottom-right"
+                                                                        content="Followers divided by monthly listeners. Not all followers are listeners, but this ratio shows how effectively the artist is capturing the audience - those who listen to the music.">
+                                                                        <small>
+                                                                            <span class=" fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    &nbsp;
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-deezer"></i> Fans
+                                                                    <div class="whatsThis" placement="bottom-right"
+                                                                        content="Deezer Fans">
+                                                                        <small>
+                                                                            <span class=" fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Playlists
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-apple"></i> Playlists
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-deezer"></i> Playlists
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-amazon"></i> Playlists
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Playlist Total
+                                                                    Reach
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    Trend
+                                                                    <div class="whatsThis" placement="bottom-right"
+                                                                        content="This shows the trend of spotify popularity for this artist over the last 30 days.">
+                                                                        <small>
+                                                                            <span class=" fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">Social
+                                                                    Insights</th>
+                                                                <th class="text-center">Email Report</th>
+                                                                <th ts-criteria="timestp" ts-default="descending"
+                                                                    class="text-right  tablesort-sortable tablesort-desc">
+                                                                    Added On <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">Remove</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="showIfLast ">
+                                                                <td colspan="18">No artists</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sticky-left limited-width"
+                                                                    title="J. Sherman">
+                                                                    <div class="firstCell">
+                                                                        <img class="img-circle img-sm"
+                                                                            src="assets/images/music-img4.jpg">
+                                                                        <a href="#">J. Sherman</a>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td class="text-center text-uppercase ">
+                                                                </td>
+                                                                <td class="text-right "></td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        0
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        0
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        0.00%
+                                                                    </span>
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    2
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        17
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <svg style="color:black; stroke-width:2px; width: 3em;"
+                                                                        height="14" width="42">
+                                                                        <path></path>
+                                                                    </svg>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-line-chart"></button>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span
+                                                                        class="green switch-small switch green switch-small "><small></small><input
+                                                                            type="checkbox"
+                                                                            style="display:none"><span
+                                                                            class="switch-text"> </span></span>
+                                                                </td>
+                                                                <td class="text-right ">Jun 13, 2020</td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-remove"></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sticky-left limited-width">
+                                                                    <div class="firstCell">
+                                                                        <img class="img-circle img-sm"
+                                                                            src="assets/images/music-img1.jpg">
+                                                                        <a href="#">Mike Knox</a>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center text-uppercase ">
+                                                                </td>
+                                                                <td class="text-right ">65,498</td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        12
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        155
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        986
+                                                                    </span>
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        15.72%
+                                                                    </span>
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        3
+                                                                    </span>
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    11<span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        74,386
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <svg class="sl"
+                                                                        style="color:black; stroke-width:2px; width: 3em;"
+                                                                        height="14" width="42">
+                                                                        <path
+                                                                            d="M1,13L2.6,11L4.2,11L5.8,11L7.4,11L9.000000000000002,5.000000000000001L10.6,5.000000000000001L12.200000000000001,5.000000000000001L13.8,2.9999999999999996L15.4,2.9999999999999996L17.000000000000004,2.9999999999999996L18.599999999999998,2.9999999999999996L20.2,2.9999999999999996L21.8,1L23.400000000000002,1L24.999999999999996,1L26.6,1L28.200000000000003,1L29.8,1L31.4,1L33.00000000000001,1L34.599999999999994,1L36.199999999999996,1L37.8,1L39.4,1L41,1">
+                                                                        </path>
+                                                                        <circle r="0" cx="1" cy="13" rank="6">
+                                                                        </circle>
+                                                                        <circle r="0" cx="2.6" cy="11" rank="7">
+                                                                        </circle>
+                                                                        <circle r="0" cx="4.2" cy="11" rank="7">
+                                                                        </circle>
+                                                                        <circle r="0" cx="5.8" cy="11" rank="7">
+                                                                        </circle>
+                                                                        <circle r="0" cx="7.4" cy="11" rank="7">
+                                                                        </circle>
+                                                                        <circle r="0" cx="9.000000000000002"
+                                                                            cy="5.000000000000001" rank="10">
+                                                                        </circle>
+                                                                        <circle r="0" cx="10.6"
+                                                                            cy="5.000000000000001" rank="10">
+                                                                        </circle>
+                                                                        <circle r="0" cx="12.200000000000001"
+                                                                            cy="5.000000000000001" rank="10">
+                                                                        </circle>
+                                                                        <circle r="0" cx="13.8"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="15.4"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="17.000000000000004"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="18.599999999999998"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="20.2"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="21.8" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="23.400000000000002" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="24.999999999999996" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="26.6" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="28.200000000000003" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="29.8" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="31.4" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="33.00000000000001" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="34.599999999999994" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="36.199999999999996" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="37.8" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="39.4" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="41" cy="1" rank="12">
+                                                                        </circle>
+                                                                    </svg>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-line-chart"></button>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span
+                                                                        class="green switch-small switch green switch-small "><small></small><input
+                                                                            type="checkbox"
+                                                                            style="display:none"><span
+                                                                            class="switch-text"> </span></span>
+                                                                </td>
+                                                                <td class="text-right">Jun 5, 2020</td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-remove"></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sticky-left limited-width"
+                                                                    title="50 Cent">
+                                                                    <div class="firstCell">
+                                                                        <img class="img-circle img-sm"
+                                                                            src="assets/images/music-img3.jpg">
+                                                                        <a href="#">50 Cent</a>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center text-uppercase ">
+                                                                    <span class=" flag-icon flag-icon-us"></span>
+                                                                    us
+                                                                </td>
+                                                                <td class="text-right ">159</td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        84
+                                                                    </span>
+
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        6,046,497
+                                                                    </span>
+
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        15,765,618
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        38.35%
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        5,825,891
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    61,241<span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    509<span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    122
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    35
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        64,267,850
+                                                                    </span>
+
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <svg class="sl"
+                                                                        style="color:black; stroke-width:2px; width: 3em;"
+                                                                        height="14" width="42">
+                                                                        <path
+                                                                            d="M1,13L2.3793103448275863,13L3.758620689655172,13L5.137931034482758,13L6.517241379310344,13L7.8965517241379315,13L9.275862068965516,13L10.655172413793103,13L12.034482758620689,13L13.413793103448278,13L14.793103448275863,13L16.17241379310345,13L17.551724137931032,13L18.931034482758623,13L20.310344827586206,13L21.689655172413794,13L23.068965517241377,13L24.448275862068964,13L25.827586206896555,13L27.20689655172414,1L28.586206896551726,1L29.96551724137931,1L31.344827586206897,1L32.724137931034484,1L34.103448275862064,1L35.48275862068966,1L36.862068965517246,1L38.241379310344826,1L39.62068965517241,1L41,1">
+                                                                        </path>
+                                                                        <circle r="0" cx="1" cy="13" rank="83">
+                                                                        </circle>
+                                                                        <circle r="0" cx="2.3793103448275863"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="3.758620689655172" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="5.137931034482758" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="6.517241379310344" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="7.8965517241379315"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="9.275862068965516" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="10.655172413793103"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="12.034482758620689"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="13.413793103448278"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="14.793103448275863"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="16.17241379310345" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="17.551724137931032"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="18.931034482758623"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="20.310344827586206"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="21.689655172413794"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="23.068965517241377"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="24.448275862068964"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="25.827586206896555"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="27.20689655172414" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="28.586206896551726" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="29.96551724137931" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="31.344827586206897" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="32.724137931034484" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="34.103448275862064" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="35.48275862068966" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="36.862068965517246" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="38.241379310344826" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="39.62068965517241" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="41" cy="1" rank="84">
+                                                                        </circle>
+                                                                    </svg>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-line-chart"></button>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span
+                                                                        class="green switch-small switch green switch-small "><small></small><input
+                                                                            type="checkbox"
+                                                                            style="display:none"><span
+                                                                            class="switch-text"> </span></span>
+                                                                </td>
+                                                                <td class="text-right ">Jun 5, 2020</td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-remove"></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-id="2" class="dataDtls">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title" style="overflow: visible">
+                                            <div>
+                                                <div class="flex-space-between">
+                                                    <div>
+                                                        Favorite Tracks
+                                                        <span class="badge badge-default ">3</span>
+                                                    </div>
+                                                    <div class="panel-control pad-no">
+                                                        <div>
+                                                            <button title="Download the table data in CSV format"
+                                                                class="btn btn-rounded btn-purple"
+                                                                type="button">Export CSV
+                                                            </button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div>
+                                            <div>
+                                                <div class="pad-btm ">
+                                                    <div class="form-group">
+                                                        <input type="text"
+                                                            placeholder="Search among artists you follow"
+                                                            class="form-control ">
+                                                    </div>
+                                                </div>
+                                                <div class="sticky-header-wrapper">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="sticky-left  tablesort-sortable">
+                                                                    Name <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center  tablesort-sortable">
+                                                                    Country <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    CPP Rank
+                                                                    <div class="whatsThis" use-icon="true"
+                                                                        append-to-body="true">
+                                                                        <small>
+                                                                            <span class=" fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    &nbsp;
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Popularity <div
+                                                                        class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Followers <div
+                                                                        class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Monthly Listeners
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Conversion Ratio
+                                                                    <div class="whatsThis" placement="bottom-right"
+                                                                        content="Followers divided by monthly listeners. Not all followers are listeners, but this ratio shows how effectively the artist is capturing the audience - those who listen to the music.">
+                                                                        <small>
+                                                                            <span class=" fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    &nbsp;
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-deezer"></i> Fans
+                                                                    <div class="whatsThis" placement="bottom-right"
+                                                                        content="Deezer Fans">
+                                                                        <small>
+                                                                            <span class=" fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Playlists
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-apple"></i> Playlists
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-deezer"></i> Playlists
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-amazon"></i> Playlists
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right  tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Playlist Total
+                                                                    Reach
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    Trend
+                                                                    <div class="whatsThis" placement="bottom-right"
+                                                                        content="This shows the trend of spotify popularity for this artist over the last 30 days.">
+                                                                        <small>
+                                                                            <span class=" fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">Social
+                                                                    Insights</th>
+                                                                <th class="text-center">Email Report</th>
+                                                                <th ts-criteria="timestp" ts-default="descending"
+                                                                    class="text-right  tablesort-sortable tablesort-desc">
+                                                                    Added On <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">Remove</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="showIfLast ">
+                                                                <td colspan="18">No artists</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sticky-left limited-width"
+                                                                    title="J. Sherman">
+                                                                    <div class="firstCell">
+                                                                        <img class="img-circle img-sm"
+                                                                            src="assets/images/music-img4.jpg">
+                                                                        <a href="#">J. Sherman</a>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center text-uppercase ">
+                                                                </td>
+                                                                <td class="text-right "></td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        0
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        0
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        0.00%
+                                                                    </span>
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    2
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        17
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <svg style="color:black; stroke-width:2px; width: 3em;"
+                                                                        height="14" width="42">
+                                                                        <path></path>
+                                                                    </svg>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-line-chart"></button>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span
+                                                                        class="green switch-small switch green switch-small "><small></small><input
+                                                                            type="checkbox"
+                                                                            style="display:none"><span
+                                                                            class="switch-text"> </span></span>
+                                                                </td>
+                                                                <td class="text-right ">Jun 13, 2020</td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-remove"></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sticky-left limited-width">
+                                                                    <div class="firstCell">
+                                                                        <img class="img-circle img-sm"
+                                                                            src="assets/images/music-img1.jpg">
+                                                                        <a href="#">Mike Knox</a>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center text-uppercase ">
+                                                                </td>
+                                                                <td class="text-right ">65,498</td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        12
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        155
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        986
+                                                                    </span>
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        15.72%
+                                                                    </span>
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        3
+                                                                    </span>
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    11<span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    <span>-</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        74,386
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <svg class="sl"
+                                                                        style="color:black; stroke-width:2px; width: 3em;"
+                                                                        height="14" width="42">
+                                                                        <path
+                                                                            d="M1,13L2.6,11L4.2,11L5.8,11L7.4,11L9.000000000000002,5.000000000000001L10.6,5.000000000000001L12.200000000000001,5.000000000000001L13.8,2.9999999999999996L15.4,2.9999999999999996L17.000000000000004,2.9999999999999996L18.599999999999998,2.9999999999999996L20.2,2.9999999999999996L21.8,1L23.400000000000002,1L24.999999999999996,1L26.6,1L28.200000000000003,1L29.8,1L31.4,1L33.00000000000001,1L34.599999999999994,1L36.199999999999996,1L37.8,1L39.4,1L41,1">
+                                                                        </path>
+                                                                        <circle r="0" cx="1" cy="13" rank="6">
+                                                                        </circle>
+                                                                        <circle r="0" cx="2.6" cy="11" rank="7">
+                                                                        </circle>
+                                                                        <circle r="0" cx="4.2" cy="11" rank="7">
+                                                                        </circle>
+                                                                        <circle r="0" cx="5.8" cy="11" rank="7">
+                                                                        </circle>
+                                                                        <circle r="0" cx="7.4" cy="11" rank="7">
+                                                                        </circle>
+                                                                        <circle r="0" cx="9.000000000000002"
+                                                                            cy="5.000000000000001" rank="10">
+                                                                        </circle>
+                                                                        <circle r="0" cx="10.6"
+                                                                            cy="5.000000000000001" rank="10">
+                                                                        </circle>
+                                                                        <circle r="0" cx="12.200000000000001"
+                                                                            cy="5.000000000000001" rank="10">
+                                                                        </circle>
+                                                                        <circle r="0" cx="13.8"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="15.4"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="17.000000000000004"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="18.599999999999998"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="20.2"
+                                                                            cy="2.9999999999999996" rank="11">
+                                                                        </circle>
+                                                                        <circle r="0" cx="21.8" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="23.400000000000002" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="24.999999999999996" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="26.6" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="28.200000000000003" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="29.8" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="31.4" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="33.00000000000001" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="34.599999999999994" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="36.199999999999996" cy="1"
+                                                                            rank="12"></circle>
+                                                                        <circle r="0" cx="37.8" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="39.4" cy="1" rank="12">
+                                                                        </circle>
+                                                                        <circle r="0" cx="41" cy="1" rank="12">
+                                                                        </circle>
+                                                                    </svg>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-line-chart"></button>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span
+                                                                        class="green switch-small switch green switch-small "><small></small><input
+                                                                            type="checkbox"
+                                                                            style="display:none"><span
+                                                                            class="switch-text"> </span></span>
+                                                                </td>
+                                                                <td class="text-right">Jun 5, 2020</td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-remove"></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sticky-left limited-width"
+                                                                    title="50 Cent">
+                                                                    <div class="firstCell">
+                                                                        <img class="img-circle img-sm"
+                                                                            src="assets/images/music-img3.jpg">
+                                                                        <a href="#">50 Cent</a>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center text-uppercase ">
+                                                                    <span class=" flag-icon flag-icon-us"></span>
+                                                                    us
+                                                                </td>
+                                                                <td class="text-right ">159</td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        84
+                                                                    </span>
+
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        6,046,497
+                                                                    </span>
+
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        15,765,618
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        38.35%
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        5,825,891
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    61,241<span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    509<span>-</span>
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    122
+                                                                </td>
+                                                                <td class="text-right ">
+                                                                    35
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        64,267,850
+                                                                    </span>
+
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <svg class="sl"
+                                                                        style="color:black; stroke-width:2px; width: 3em;"
+                                                                        height="14" width="42">
+                                                                        <path
+                                                                            d="M1,13L2.3793103448275863,13L3.758620689655172,13L5.137931034482758,13L6.517241379310344,13L7.8965517241379315,13L9.275862068965516,13L10.655172413793103,13L12.034482758620689,13L13.413793103448278,13L14.793103448275863,13L16.17241379310345,13L17.551724137931032,13L18.931034482758623,13L20.310344827586206,13L21.689655172413794,13L23.068965517241377,13L24.448275862068964,13L25.827586206896555,13L27.20689655172414,1L28.586206896551726,1L29.96551724137931,1L31.344827586206897,1L32.724137931034484,1L34.103448275862064,1L35.48275862068966,1L36.862068965517246,1L38.241379310344826,1L39.62068965517241,1L41,1">
+                                                                        </path>
+                                                                        <circle r="0" cx="1" cy="13" rank="83">
+                                                                        </circle>
+                                                                        <circle r="0" cx="2.3793103448275863"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="3.758620689655172" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="5.137931034482758" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="6.517241379310344" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="7.8965517241379315"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="9.275862068965516" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="10.655172413793103"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="12.034482758620689"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="13.413793103448278"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="14.793103448275863"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="16.17241379310345" cy="13"
+                                                                            rank="83"></circle>
+                                                                        <circle r="0" cx="17.551724137931032"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="18.931034482758623"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="20.310344827586206"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="21.689655172413794"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="23.068965517241377"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="24.448275862068964"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="25.827586206896555"
+                                                                            cy="13" rank="83"></circle>
+                                                                        <circle r="0" cx="27.20689655172414" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="28.586206896551726" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="29.96551724137931" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="31.344827586206897" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="32.724137931034484" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="34.103448275862064" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="35.48275862068966" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="36.862068965517246" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="38.241379310344826" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="39.62068965517241" cy="1"
+                                                                            rank="84"></circle>
+                                                                        <circle r="0" cx="41" cy="1" rank="84">
+                                                                        </circle>
+                                                                    </svg>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-line-chart"></button>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span
+                                                                        class="green switch-small switch green switch-small "><small></small><input
+                                                                            type="checkbox"
+                                                                            style="display:none"><span
+                                                                            class="switch-text"> </span></span>
+                                                                </td>
+                                                                <td class="text-right ">Jun 5, 2020</td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-remove"></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-id="3" class="dataDtls">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title" style="overflow: visible">
+                                            <div>
+                                                <div class="flex-space-between">
+                                                    <div>
+                                                        Favorite Albums
+                                                        <span class="badge badge-default ">3</span>
+                                                    </div>
+                                                    <div class="panel-control pad-no">
+                                                        <div>
+                                                            <button title="Download the table data in CSV format"
+                                                                class="btn btn-rounded btn-purple"
+                                                                type="button">Export CSV
+                                                            </button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div>
+                                            <div>
+
+                                                <div class="pad-btm ">
+                                                    <div class="form-group">
+                                                        <input type="text"
+                                                            placeholder="Search among artists you follow"
+                                                            class="form-control ">
+                                                    </div>
+                                                </div>
+                                                <div class="sticky-header-wrapper">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="sticky-left tablesort-sortable">
+                                                                    Track <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="tablesort-sortable">
+                                                                    Artist(s) <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    Spotify Popularity <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    Spotify Playlists Total Reach <div
+                                                                        class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    <i class="fa fa-spotify"></i> Playlists
+                                                                    <div class="whatsThis" use-icon="true"
+                                                                        append-to-body="true"
+                                                                        placement="bottom-right"
+                                                                        content="Total Spotify Playlists">
+                                                                        <small>
+                                                                            <span class="fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    &nbsp;
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    <i class="fa fa-apple"></i> Playlists
+                                                                    <div class="whatsThis" use-icon="true"
+                                                                        append-to-body="true"
+                                                                        placement="bottom-right"
+                                                                        content="Total Apple Music Playlists">
+                                                                        <small>
+                                                                            <span class="fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    &nbsp;
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    <i class="fa fa-deezer"></i> Playlists
+                                                                    <div class="whatsThis" use-icon="true"
+                                                                        append-to-body="true"
+                                                                        placement="bottom-right"
+                                                                        content="Total Deezer Playlists">
+                                                                        <small>
+                                                                            <span class="fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    &nbsp;
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    <i class="fa fa-amazon"></i> Playlists
+                                                                    <div class="whatsThis" use-icon="true"
+                                                                        append-to-body="true"
+                                                                        placement="bottom-right"
+                                                                        content="Total Amazon Music Playlists">
+                                                                        <small>
+                                                                            <span class="fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                    &nbsp;
+                                                                    <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    Trend
+                                                                    <div class="whatsThis" use-icon="true"
+                                                                        append-to-body="true"
+                                                                        placement="bottom-right"
+                                                                        content="This shows the trend of spotify popularity for this track over the last 30 days.">
+                                                                        <small>
+                                                                            <span class="fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">Email Report</th>
+                                                                <th
+                                                                    class="text-right tablesort-sortable tablesort-desc">
+                                                                    Added On <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">Remove</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="showIfLast">
+                                                                <td colspan="12">No tracks</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sticky-left limited-width">
+                                                                    <img class="img-circle img-sm"
+                                                                        src="https://i.scdn.co/image/445e687afd14e265b0be55a78b8dfa00a6a1240f">
+                                                                    <a href="#">Banana
+                                                                        (feat. Shaggy)</a>
+                                                                </td>
+                                                                <td>
+                                                                    <span>
+                                                                        <a href="#">Conkarah</a>
+                                                                        <br>
+                                                                    </span><span>
+                                                                        <a href="#">Shaggy</a>
+
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        50
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span>
+                                                                        2,086,657
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    156
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    7
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    6
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    0
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <svg class="sl"
+                                                                        style="stroke: black; stroke-width:2px; width: 3em;"
+                                                                        data="entry.trend" isreversed="false"
+                                                                        height="14" width="42">
+                                                                        <path
+                                                                            d="M1,13L5.444444444444445,10.88235294117647L9.88888888888889,8.76470588235294L14.333333333333332,5.941176470588235L18.77777777777778,4.529411764705881L23.22222222222222,3.8235294117647065L27.666666666666664,3.11764705882353L32.111111111111114,2.4117647058823533L36.55555555555556,1.7058823529411766L41,1">
+                                                                        </path>
+                                                                        <circle r="0" cx="1" cy="13" rank="33">
+                                                                        </circle>
+                                                                        <circle r="0" cx="5.444444444444445"
+                                                                            cy="10.88235294117647" rank="36">
+                                                                        </circle>
+                                                                        <circle r="0" cx="9.88888888888889"
+                                                                            cy="8.76470588235294" rank="39">
+                                                                        </circle>
+                                                                        <circle r="0" cx="14.333333333333332"
+                                                                            cy="5.941176470588235" rank="43">
+                                                                        </circle>
+                                                                        <circle r="0" cx="18.77777777777778"
+                                                                            cy="4.529411764705881" rank="45">
+                                                                        </circle>
+                                                                        <circle r="0" cx="23.22222222222222"
+                                                                            cy="3.8235294117647065" rank="46">
+                                                                        </circle>
+                                                                        <circle r="0" cx="27.666666666666664"
+                                                                            cy="3.11764705882353" rank="47">
+                                                                        </circle>
+                                                                        <circle r="0" cx="32.111111111111114"
+                                                                            cy="2.4117647058823533" rank="48">
+                                                                        </circle>
+                                                                        <circle r="0" cx="36.55555555555556"
+                                                                            cy="1.7058823529411766" rank="49">
+                                                                        </circle>
+                                                                        <circle r="0" cx="41" cy="1" rank="50">
+                                                                        </circle>
+                                                                    </svg>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span
+                                                                        class="green switch-small switch green switch-small checked"><small></small><input
+                                                                            type="checkbox" style="display:none"
+                                                                            class="ng-pristine ng-untouched ng-valid ng-empty"><span
+                                                                            class="switch-text"> </span></span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span class="label label-default">Jun 5,
+                                                                        2020</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-remove"></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-id="4" class="dataDtls">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title" style="overflow: visible">
+                                            <div>
+                                                <div class="flex-space-between">
+                                                    <div>
+                                                        Favorite Playlists
+                                                        <span class="badge badge-default ">3</span>
+                                                    </div>
+                                                    <div class="panel-control pad-no">
+                                                        <div>
+                                                            <button title="Download the table data in CSV format"
+                                                                class="btn btn-rounded btn-purple"
+                                                                type="button">Export CSV
+                                                            </button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div>
+                                            <div>
+
+                                                <div class="pad-btm ">
+                                                    <div class="form-group">
+                                                        <input type="text"
+                                                            placeholder="Search among artists you follow"
+                                                            class="form-control ">
+                                                    </div>
+                                                </div>
+                                                <div class="sticky-header-wrapper">
+                                                    <table class="table table-striped table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center tablesort-sortable">
+                                                                    Platform <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="sticky-left tablesort-sortable">
+                                                                    Playlist <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center tablesort-sortable">
+                                                                    Country <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    Followers <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    Total Tracks <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    Tracks Added In A Week <div
+                                                                        class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-right tablesort-sortable">
+                                                                    Tracks Removed In A Week <div
+                                                                        class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    Trend
+                                                                    <div class="whatsThis" use-icon="true">
+                                                                        <small>
+
+                                                                            <span lass="fa fa-info-circle"></span>
+                                                                        </small>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">Email Report</th>
+                                                                <th
+                                                                    class="text-right tablesort-sortable tablesort-desc">
+                                                                    Added On <div class="sortingCaret">
+                                                                        <i class="fa fa-sort-up"></i>
+                                                                        <i class="fa fa-sort-down"></i>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="text-center">Remove</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="showIfLast ">
+                                                                <td colspan="11" class="ng-binding">No playlists
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">
+                                                                    <i class="fa fa-spotify"
+                                                                        style="color: rgb(29, 185, 84);">
+                                                                    </i>
+                                                                </td>
+                                                                <td class="sticky-left limited-width">
+                                                                    <img class="square-rounded img-sm"
+                                                                        src="assets/images/music-img8.jpg">
+                                                                    <a href="#">
+                                                                        Hits
+                                                                    </a>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span>N/A</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span ng-if="isNumeric(entry.followers)"
+                                                                        class="ng-binding ">0</span>
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span ng-if="isNumeric(entry.num_track)"
+                                                                        class="ng-binding ">90</span>
+                                                                </td>
+                                                                <td class="text-right ng-binding">
+                                                                    8
+                                                                </td>
+                                                                <td class="text-right ng-binding">
+                                                                    40
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <svg ng-transclude="" class="sl"
+                                                                        style="stroke: black; stroke-width:2px; width: 2em;"
+                                                                        data="entry.trend" is-reversed="false"
+                                                                        height="14" width="28">
+                                                                        <path
+                                                                            d="M1,13L2.238095238095238,13L3.476190476190476,13L4.7142857142857135,13L5.952380952380952,13L7.19047619047619,13L8.428571428571427,13L9.666666666666666,13L10.904761904761903,13L12.142857142857142,13L13.38095238095238,13L14.61904761904762,13L15.857142857142856,13L17.095238095238095,13L18.333333333333332,13L19.57142857142857,13L20.809523809523807,13L22.047619047619047,13L23.285714285714285,13L24.523809523809522,13L25.76190476190476,13L27,13">
+                                                                        </path>
+                                                                        <circle r="0" cx="1" cy="13" rank="0">
+                                                                        </circle>
+                                                                        <circle r="0" cx="2.238095238095238" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="3.476190476190476" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="4.7142857142857135"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="5.952380952380952" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="7.19047619047619" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="8.428571428571427" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="9.666666666666666" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="10.904761904761903"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="12.142857142857142"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="13.38095238095238" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="14.61904761904762" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="15.857142857142856"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="17.095238095238095"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="18.333333333333332"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="19.57142857142857" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="20.809523809523807"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="22.047619047619047"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="23.285714285714285"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="24.523809523809522"
+                                                                            cy="13" rank="0"></circle>
+                                                                        <circle r="0" cx="25.76190476190476" cy="13"
+                                                                            rank="0"></circle>
+                                                                        <circle r="0" cx="27" cy="13" rank="0">
+                                                                        </circle>
+                                                                    </svg>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span
+                                                                        class="green switch-small switch green switch-small checked"><small></small><input
+                                                                            type="checkbox"
+                                                                            style="display:none"><span
+                                                                            class="switch-text"> </span></span>
+
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    <span class="label label-default ng-binding">Jun
+                                                                        5, 2020</span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <button
+                                                                        class="btn btn-default btn-icon btn-circle icon-sm fa fa-remove"></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-id="5" class="dataDtls">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title" style="overflow: visible">
+                                            <div>
+                                                <div class="flex-space-between">
+                                                    <div>
+                                                        Favorite Curators
+                                                        <span class="badge badge-default ">3</span>
+                                                    </div>
+                                                    <div class="panel-control pad-no">
+                                                        <div>
+                                                            <button title="Download the table data in CSV format"
+                                                                class="btn btn-rounded btn-purple"
+                                                                type="button">Export CSV
+                                                            </button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        <section class="empty-dashboard">
+                                                            <h2>Your Dashboard is Empty,
+                                                                Let's&nbsp;Get&nbsp;Started!</h2>
+                                                            <p>Follow your favorite Artists, Tracks, Albums,
+                                                                Playlists or Curators to see their key metrics
+                                                                on your Dashboard</p>
+                                                            <div class="dashboard-body"><img
+                                                                    src="assets/images/Empty_Dashboard.svg"
+                                                                    alt="Empty Dashboard" class="dashboard-image">
+                                                                <div class="dashboard-tips">
+                                                                    <ul>
+                                                                        <li>Click <i class="fa fa-search"></i> In
+                                                                            the top right corner to search</li>
+                                                                        <li>Find what you're looking for? Great!
+                                                                            Visit the profile</li>
+                                                                        <li>Add to your Dashboard by clicking
+                                                                            +Follow</li>
+                                                                    </ul><button type="button"
+                                                                        class="btn sticky-navbar-button follow-btn">Search
+                                                                        an
+                                                                        Artist</button>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- uiView: footer -->
+    <app-footer></app-footer>
+</div>
